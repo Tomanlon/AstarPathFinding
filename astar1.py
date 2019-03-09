@@ -160,9 +160,9 @@ def h_cost(node,goal):
 	# Weight
 	w = 1.0
 	# Euclidean distance be careful: this distance will cost longer time
-	h = w*math.sqrt((goal.x-node.x)**2 + (goal.y-node.y)**2)
+	#h = w*math.sqrt((goal.x-node.x)**2 + (goal.y-node.y)**2)
 	# Mahattan distance
-#	h = w*(abs(goal.x-node.x) + abs(goal.y-node.y))
+	h = w*(abs(goal.x-node.x) + abs(goal.y-node.y))
 	return h
 
 # Node index obtain
@@ -180,7 +180,7 @@ def node_verify(node,ox,oy):
 def main():
 	# Define  start point(sx,sy),goal point(gx,gy)
 	sx,sy=15,15
-	gx,gy=30,40
+	gx,gy=55,50
 	# Astar algorithm tracking path node
 	rx,ry=astar_plan(sx,sy,gx,gy)
 	print rx,ry
